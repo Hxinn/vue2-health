@@ -10,7 +10,7 @@
                             <span class="login_btn" @click.stop="dialogFormVisible = true">登录</span>
                         </div>
                     </div>
-                    <a class="projectLogo" href="https://github.com/uncleLian/vue2-health" target="_blank">vue2-health</a>
+                    <a class="projectLogo" href="#" target="_blank">QLinks 订阅号平台</a>
                     <!-- ripple -->
                     <div class="ripple left">
                         <i class="r1"></i>
@@ -32,7 +32,7 @@
                 <div class="page login-page2">
                     <div class="page2-wrap">
                         <div class="ani page2-content" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s">
-                            <a class="link" href="javascript:;">观看视频，进一步了解头条号</a>
+                            <a class="link" href="javascript:;">观看视频，进一步了解订阅号</a>
                             <h2>高速成长的新兴创作平台</h2>
                             <p>当其他公众平台已是红海，</p>
                             <p>我们才刚进入红利期，</p>
@@ -61,7 +61,7 @@
                                         <animateMotion path="M145,285C235,270,325,210,345,180" dur="0.8s" repeatCount="1" calcMode="discrete" />
                                         <set attributeName="x" attributeType="XML" to="355" begin="0.8s" />
                                         <set attributeName="y" attributeType="XML" to="120" begin="0.8s" />
-                                        <vue-num-to v-model="increaseNum" :endVal="623535" :duration="1000"></vue-num-to>
+                                        <vue-num-to :endVal="623535" :duration="1000"></vue-num-to>
                                         <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="6">{{increaseNum}}</tspan>
                                     </text>
                                 </svg>
@@ -103,7 +103,7 @@
                             </div>
                         </div>
                         <div class="ani article" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s">
-                             <a class="link" target="_blank" href="javascript:;">观看视频，了解头条号推荐机制</a>
+                             <a class="link" target="_blank" href="javascript:;">观看视频，了解订阅号推荐机制</a>
                             <h2>迄今为止</h2>
                             <h2>最科学和精确的推荐引擎</h2>
                             <div class="text">
@@ -169,7 +169,7 @@ export default {
             increaseNum: 623535,
             dialogFormVisible: false, // 登录框
             form: {
-                username: 'etone',
+                username: 'QLinks',
                 password: '123456',
                 agree: true
             }
@@ -186,16 +186,15 @@ export default {
         ]),
         login() {
             let params = {
-                enews: 'login',
                 username: this.form.username,
-                password: this.form.password,
-                equestion: 0
+                password: this.form.password
             }
             this.get_login_data(params)
                 .then(() => {
+                    console.log('red', this.$route.query.redirect)
                     this.$route.query.redirect ? this.$router.push(this.$route.query.redirect) : this.$router.push('/index/home')
-                })
-                .catch(() => {
+                }).catch((res) => {
+                    console.log('error', res)
                     this.$message.error('账号密码错误')
                 })
         },
@@ -214,8 +213,8 @@ export default {
 }
 </script>
 <style lang='stylus'>
-bgColor=#ff6e7c
-bgColor2=#ff776d
+bgColor=#420fe6
+bgColor2=#663fe2
 #login {
     position: relative;
     width: 100%;
@@ -223,6 +222,8 @@ bgColor2=#ff776d
     overflow: hidden;
     background: #fff;
     color: #333;
+
+
     .swiper {
         width: 100%;
         height: 100%;

@@ -1,15 +1,15 @@
 <template>
     <header id="header" class="">
         <div class="header_wrap">
-            <router-link class="logo" to="/">头条号</router-link>
+            <router-link class="logo" to="/">订阅号</router-link>
             <div class="right">
-                <router-link :to="{name: 'publish'}">
+                <!-- <router-link :to="{name: 'publish'}">
                     <el-button type="primary" class="publish_btn">发表</el-button>
-                </router-link>
+                </router-link> -->
                 <el-dropdown class="user" @command="handleCommand" placement='bottom'>
                     <div class="userinfo">
-                        <img :src="user.headimgurl" alt="">
-                        <span class="el-dropdown-link">{{user.nickname}}</span>
+                        <img :src="user.icon" alt="">
+                        <span class="el-dropdown-link">{{user.name}}</span>
                     </div>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item command="exit">退出</el-dropdown-item>

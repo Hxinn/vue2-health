@@ -1,7 +1,7 @@
 <template>
     <div id="footer">
         <div class="footer_wrap">
-            <a href="" title="">关于健康头条</a>
+            <a href="" title="">关于QLinks订阅号</a>
             <span>|</span>
             <a href="" title="">用户协议</a>
             <span>|</span>

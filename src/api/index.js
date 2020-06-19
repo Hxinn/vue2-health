@@ -1,6 +1,7 @@
 // import { request, instance } from '@/utils/request'
 import { request } from '@/utils/request'
-
+// 获取项目api请求地址
+let base_api = 'http://192.168.2.190:8083'
 // Tip：
 // 1、request方法适用于普遍的GET、POST方法
 // 2、instance方法适用于需要做特殊处理的请求，如：自定义Header、其他的http方法等
@@ -9,13 +10,13 @@ import { request } from '@/utils/request'
 
 // 登录
 export function getLogin({ enews, username, password, equestion }) {
-    let res = request('/ecmsadmin.php', 'POST', { enews, username, password, equestion })
+    let res = request(`${base_api}/subscribe/account/login`, 'POST', { enews, username, password, equestion })
     return res
 }
 
 // 用户信息
 export function getUser(token) {
-    let res = request('/ecmsadmin.php', 'POST', { enews: 'check', token })
+    let res = request('/subscribe/account/admin/getUser', 'POST', { token })
     return res
 }
 

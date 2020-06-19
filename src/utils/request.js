@@ -5,7 +5,7 @@ import { Message } from 'element-ui'
 
 // 创建axios实例
 export const instance = axios.create({
-    baseURL: 'http://api.toutiaojk.com/e/extend/jkh/',
+    baseURL: 'http://192.168.2.190:8083',
     timeout: 10 * 1000
 })
 

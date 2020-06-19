@@ -56,6 +56,13 @@ export const routes = [
                 component: home
             },
             {
+                name: 'creation',
+                path: 'creation',
+                title: '创作',
+                icon: 'el-icon-fa-pencil',
+                component: creation
+            },
+            {
                 name: 'publish',
                 path: 'publish',
                 title: '发表',

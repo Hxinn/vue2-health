@@ -89,7 +89,7 @@ exports.createNotifierCallback = function () {
       return
     }
     const error = errors[0]
-
+    console.log("error", error)
     const filename = error.file.split('!').pop()
     notifier.notify({
       title: pkg.name,

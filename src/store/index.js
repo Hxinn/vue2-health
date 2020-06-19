@@ -30,7 +30,7 @@ const actions = {
             .then(res => {
                 if (res.data && res.data.token) {
                     cache.setToken(res.data.token)
-                    resolve(res.data)
+                    resolve(res)
                 } else {
                     reject(new Error('nothing data'))
                 }
@@ -47,7 +47,7 @@ const actions = {
             getUser(cache.getToken())
             .then(res => {
                 if (res && res.data) {
-                    commit('set_user', res.data)
+                    commit('set_user', res.data.user)
                     resolve(res.data)
                 } else {
                     commit('remove_token')
