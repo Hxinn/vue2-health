@@ -7,7 +7,7 @@
                     <i v-if="list.icon" :class="list.icon"></i>
                     <span slot="title">{{list.title}}</span>
                 </template>
-                <template v-for="(item,itemIndex) in list.children" >
+                <template v-for="(item,itemIndex) in list.children">
                     <!-- 子路由里还有子路由的 -->
                     <my-menu-item v-if="item.children && item.children.length > 0" :json="[item]"></my-menu-item>
 
